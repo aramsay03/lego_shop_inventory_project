@@ -1,0 +1,16 @@
+<p></p>
+
+<% @products.each do |product| %>
+<div class="">
+  <p>Item Name: <%= product.name %></p>
+  <p>Item number: <%= product.product_code %></p>
+  <p>Cost Price: £<%= product.cost_price %>.00</p>
+  <p>Retail Price: -coming soon-</p>
+  <p>Quantity in stock: -coming soon-</p>
+  <p>Category: -coming soon-</p>
+  <p>Description: <%= product.description %></p>
+  <img class="" src="..<% product.image_url %>" alt="<%= product.name %>">
+  <p>Supplier: -coming soon-</p>
+</div>
+<hr />
+<% end %>
