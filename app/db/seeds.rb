@@ -1,7 +1,7 @@
 require_relative( "../models/product.rb" )
 require("pry-byebug")
 
-# Product.delete_all()
+Product.delete_all()
 
 product1 = Product.new({
   "name" => "Mini Mobile Crane",

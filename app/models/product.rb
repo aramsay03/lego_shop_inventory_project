@@ -26,4 +26,39 @@ class Product
     @id = product['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE products SET
+    (name, product_code, description, cost_price, image_url)
+    =
+    ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@name, @product_code, @description, @cost_price, @image_url]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM products WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT FROM products WHERE id = $1"
+    values = [id]
+    product = SqlRunner.new(sql, values)
+    result = Product.new(product.first) #?? Could result be replaced with return to remove next line.
+    return result
+  end
+
+  def self.all()
+    sql = "SELECT * FROM products"
+    products = SqlRunner.run(sql)
+    result = products.map{ |product| Product.new(product)}
+    return result
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM products"
+    SqlRunner.run(sql)
+  end
 end
