@@ -9,8 +9,10 @@
   <p>Quantity in stock: -coming soon-</p>
   <p>Category: -coming soon-</p>
   <p>Description: <%= product.description %></p>
-  <img class="" src="..<% product.image_url %>" alt="<%= product.name %>">
   <p>Supplier: -coming soon-</p>
+</div>
+<div class="productimg">
+  <img src="../images/products/<%= product.product_code %>.jpg" alt="<%= product.name %>">
 </div>
 <hr />
 <% end %>

@@ -1,0 +1,8 @@
+body {
+  background-color: lightyellow;
+}
+
+div img {
+  max-width: 300px;
+  max-height: 300px;
+}
