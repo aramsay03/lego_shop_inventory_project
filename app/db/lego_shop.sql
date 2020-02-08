@@ -10,9 +10,9 @@ CREATE TABLE products
   product_code VARCHAR(255) not null,
   description TEXT,
   cost_price INT,
-  supplier_id INT references suppliers(id),
-  image_url TEXT,
-  category_id INT references categories(id)
+  -- supplier_id INT references suppliers(id),
+  -- category_id INT references categories(id),
+  image_url TEXT
 );
 
 -- CREATE TABLE stock
