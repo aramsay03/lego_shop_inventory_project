@@ -42,6 +42,13 @@ class Product
     SqlRunner.run(sql, values)
   end
 
+  def stock()
+    sql = "SELECT * FROM stock WHERE product_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Stock.new(results.first)
+  end
+
   def self.find(id)
     sql = "SELECT FROM products WHERE id = $1"
     values = [id]

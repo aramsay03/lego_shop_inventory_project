@@ -2,6 +2,7 @@ require_relative( "../models/product.rb" )
 require_relative( "../models/stock.rb" )
 require("pry-byebug")
 
+Stock.delete_all()
 Product.delete_all()
 
 ## supplier Seed Data ##
@@ -43,7 +44,7 @@ stock1 = Stock.new({
 stock1.save()
 
 stock2 = Stock.new({
-  "product_id" => product1.id,
+  "product_id" => product2.id,
   "retail_price" => 650,
   "stock_qty" => 4
 })

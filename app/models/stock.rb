@@ -22,4 +22,53 @@ class Stock
     @id = stock['id'].to_i
   end
 
+  # UPDATE
+  def update()
+    sql = "UPDATE stock SET
+    (product_id, retail_price, stock_qty)
+    =
+    ($1, $2, $3)
+    WHERE id = $4"
+    values = [@product_id, @retail_price, @stock_qty]
+    SqlRunner.run(sql, values)
+  end
+
+  # DETETE
+  def delete()
+    sql = "DELETE FROM stock WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  # FIND PRODUCT ID
+  def product()
+    sql = "SELECT * FROM products WHERE id = $1"
+    values = [@product_id]
+    results = SqlRunner.run(sql, values)
+    return Product.new(results.first)
+  end
+
+  # FIND
+  def self.find(id)
+    sql = "SELECT FROM stock WHERE id = $1"
+    values = [id]
+    stock = SqlRunner.new(sql, values)
+    result = Stock.new(stock.first)
+    return result
+  end
+
+  # SELF.ALL
+  def self.all()
+    sql = "SELECT * FROM stock"
+    stock = SqlRunner.run(sql)
+    result = stock.map{ |stock| Stock.new(stock)}
+    return result
+  end
+
+  # SELF.DETETE_ALL
+  def self.delete_all
+    sql = "DELETE FROM stock"
+    SqlRunner.run(sql)
+  end
+
 end
