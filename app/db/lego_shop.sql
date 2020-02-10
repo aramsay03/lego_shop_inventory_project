@@ -1,28 +1,7 @@
--- DROP TABLE stock;
+DROP TABLE stock;
 -- DROP TABLE categories;
 -- DROP TABLE suppliers;
 DROP TABLE products;
-
-CREATE TABLE products
-(
-  id SERIAL primary key,
-  name VARCHAR(255) not null,
-  product_code VARCHAR(255) not null,
-  description TEXT,
-  cost_price INT
-  -- supplier_id INT references suppliers(id),
-  -- category_id INT references categories(id),
-  -- image_url TEXT  (NO LONGER NEEDED.)
-);
-
--- CREATE TABLE stock
--- (
---   id SERIAL primary key,
---   product_id INT references products(id),
---   retail_price INT,
---   image_url TEXT,
---   stock_qty INT
--- );
 
 -- CREATE TABLE suppliers
 -- (
@@ -41,3 +20,23 @@ CREATE TABLE products
 --   id SERIAL primary key,
 --   name VARCHAR(255)
 -- );
+
+CREATE TABLE products
+(
+  id SERIAL primary key,
+  name VARCHAR(255) not null,
+  product_code VARCHAR(255) not null,
+  description TEXT,
+  cost_price INT
+  -- supplier_id INT references suppliers(id),
+  -- category_id INT references categories(id),
+  -- image_url TEXT  (NO LONGER NEEDED.)
+);
+
+CREATE TABLE stock
+(
+  id SERIAL primary key,
+  product_id INT references products(id),
+  retail_price INT,
+  stock_qty INT
+);
