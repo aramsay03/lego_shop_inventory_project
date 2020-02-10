@@ -4,6 +4,8 @@ require_relative( "../models/product.rb" )
 require_relative( "../models/stock.rb" )
 require("pry-byebug")
 
+Supplier.delete_all()
+Category.delete_all()
 Stock.delete_all()
 Product.delete_all()
 
