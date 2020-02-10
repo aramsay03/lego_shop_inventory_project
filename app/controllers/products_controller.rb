@@ -20,7 +20,6 @@ end
 # READ - one/show (by id) (GET) #
 get '/products/:id' do
   @product = Product.find(params[:id])
-
   erb( :"product/show" )
 end
 

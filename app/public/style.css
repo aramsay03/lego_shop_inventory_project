@@ -1,8 +1,74 @@
 body {
+  width: 100%;
+  margin: 0;
+  background-image: url(./images/main_background.jpg);
+  /* background-size: cover; */
   background-color: lightyellow;
+  display: grid;
+  grid-template-columns: 1fr 85% 1fr;
+  /* display: block; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  padding-top: 30px;
 }
 
 div img {
   max-width: 300px;
   max-height: 300px;
+}
+
+.home p h1 {
+
+}
+
+main {
+  grid-column: 2 / span 1;
+}
+
+nav {
+  /* display: flex;
+  flex-direction: row; */
+  padding: 20px;
+  align-self: center;
+  border-radius: 20px;
+  background-color: white;
+  background-image: url(./images/nav_background.jpg);
+  background-size: cover;
+  /* width: 90%; */
+  height: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  background-color: blue;
+  border-radius: 5px;
+  color: white;
+  height: 50px;
+  margin: 8px;
+  padding: 5px;
+}
+
+nav a {
+  background-color: yellow;
+  color: black;
+}
+
+section .mainbox {
+  /* display: block; */
+  /* flex-wrap: wrap; */
+  padding: 20px 40px;
+  margin-top: 50px;
+  align-content: center;
+  border-radius: 20px;
+  background-color: white;
+  /* width: 90%; */
+  height: auto;
 }
