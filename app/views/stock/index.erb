@@ -1,0 +1,17 @@
+<p></p>
+
+<% @stock.each do |product| %>
+<div class="">
+  <p>Item Name: <%= @product.name %></p>
+  <p>Item number: <%= @product.product_code %></p>
+  <p>Cost Price: £<%= @product.cost_price %>.00</p>
+  <p>Retail Price: £<%= stock.retail_price %>.00</p>
+  <p>Quantity in stock: <%= stock.quantity %></p>
+  <p>Category: -coming soon-</p>
+  <p>Supplier: -coming soon-</p>
+</div>
+<div class="productimg">
+  <img src="../images/products/<%= @product.product_code %>.jpg" alt="<%= @product.name %>">
+</div>
+<hr />
+<% end %>

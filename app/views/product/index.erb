@@ -5,11 +5,21 @@
   <p>Item Name: <%= product.name %></p>
   <p>Item number: <%= product.product_code %></p>
   <p>Cost Price: £<%= product.cost_price %>.00</p>
-  <p>Retail Price: -coming soon-</p>
-  <p>Quantity in stock: -coming soon-</p>
-  <p>Category: -coming soon-</p>
+  <p>Retail Price: £<%= product.stock.retail_price %>.00</p>
+  <p>Quantity in stock: <%= product.stock.stock_qty %></p>
+  <p>Category: <%= product.category.name %></p>
   <p>Description: <%= product.description %></p>
-  <p>Supplier: -coming soon-</p>
+  <p>Supplier: <%= product.supplier.company_name %></p>
+</div>
+<div class="">
+  <ul>
+    <li>
+      <a href="/products/<%= product.id %>">More details</a>
+    </li>
+    <li>
+      <a href="/products/<%= product.id %>/update">Edit/Delete</a>
+    </li>
+  </ul>
 </div>
 <div class="productimg">
   <img src="../images/products/<%= product.product_code %>.jpg" alt="<%= product.name %>">

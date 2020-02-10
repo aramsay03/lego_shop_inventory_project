@@ -49,10 +49,24 @@ class Product
     return Stock.new(results.first)
   end
 
+  def supplier()
+    sql = "SELECT * FROM suppliers WHERE id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Supplier.new(results.first)
+  end
+
+  def category()
+    sql = "SELECT * FROM categories WHERE id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Category.new(results.first)
+  end
+
   def self.find(id)
     sql = "SELECT FROM products WHERE id = $1"
     values = [id]
-    product = SqlRunner.new(sql, values)
+    product = SqlRunner.run(sql, values)
     result = Product.new(product.first) #?? Could result be replaced with return to remove next line.
     return result
   end
