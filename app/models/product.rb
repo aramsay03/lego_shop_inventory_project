@@ -10,8 +10,8 @@ class Product
     @product_code = options['product_code']
     @description = options['description']
     @cost_price = options['cost_price'].to_i
-    # @supplier_id = options['supplier_id'].to_i
-    # @category_id = options['category_id'].to_i
+    @supplier_id = options['supplier_id'].to_i
+    @category_id = options['category_id'].to_i
     # @image_url = options['image_url'] (NO LONGER NEEDED.)
   end
 
