@@ -18,8 +18,8 @@ class Stock
     ($1, $2, $3)
     RETURNING id"
     values = [@product_id, @retail_price, @stock_qty]
-    stock = SqlRunner,run(sql, values).first
+    stock = SqlRunner.run(sql, values).first
     @id = stock['id'].to_i
   end
-  
+
 end

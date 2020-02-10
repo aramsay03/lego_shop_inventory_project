@@ -1,7 +1,14 @@
 require_relative( "../models/product.rb" )
+require_relative( "../models/stock.rb" )
 require("pry-byebug")
 
 Product.delete_all()
+
+## supplier Seed Data ##
+
+## Category Seed Data ##
+
+## Product Seed Data ##
 
 product1 = Product.new({
   "name" => "Mini Mobile Crane",
@@ -26,6 +33,21 @@ product2 = Product.new({
 })
 product2.save()
 
+## Stock Seed Data ##
+
+stock1 = Stock.new({
+  "product_id" => product1.id,
+  "retail_price" => 21,
+  "stock_qty" => 10
+})
+stock1.save()
+
+stock2 = Stock.new({
+  "product_id" => product1.id,
+  "retail_price" => 650,
+  "stock_qty" => 4
+})
+stock2.save()
 
 binding.pry
 nil
