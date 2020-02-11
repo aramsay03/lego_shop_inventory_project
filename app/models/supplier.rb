@@ -32,7 +32,7 @@ class Supplier
     =
     ($1, $2, $3, $4, $5, $6, $7)
     WHERE id = $8"
-    values = [@company_name, @address, @telephone, @email, @web_address, @sales_contact, @notes]
+    values = [@company_name, @address, @telephone, @email, @web_address, @sales_contact, @notes, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -43,9 +43,9 @@ class Supplier
   end
 
   def self.find(id)
-    sql = "SELECT FROM suppliers WHERE id = $1"
+    sql = "SELECT * FROM suppliers WHERE id = $1"
     values = [id]
-    supplier = SqlRunner.new(sql, values)
+    supplier = SqlRunner.run(sql, values)
     result = Supplier.new(supplier.first)
     return result
   end

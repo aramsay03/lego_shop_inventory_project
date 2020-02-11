@@ -32,7 +32,7 @@ class Product
     =
     ($1, $2, $3, $4)
     WHERE id = $5"
-    values = [@name, @product_code, @description, @cost_price]
+    values = [@name, @product_code, @description, @cost_price, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -64,7 +64,7 @@ class Product
   end
 
   def self.find(id)
-    sql = "SELECT FROM products WHERE id = $1"
+    sql = "SELECT * FROM products WHERE id = $1"
     values = [id]
     product = SqlRunner.run(sql, values)
     result = Product.new(product.first) #?? Could result be replaced with return to remove next line.

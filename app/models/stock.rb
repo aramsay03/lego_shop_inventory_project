@@ -29,7 +29,7 @@ class Stock
     =
     ($1, $2, $3)
     WHERE id = $4"
-    values = [@product_id, @retail_price, @stock_qty]
+    values = [@product_id, @retail_price, @stock_qty, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -50,9 +50,9 @@ class Stock
 
   # FIND
   def self.find(id)
-    sql = "SELECT FROM stock WHERE id = $1"
+    sql = "SELECT * FROM stock WHERE id = $1"
     values = [id]
-    stock = SqlRunner.new(sql, values)
+    stock = SqlRunner.run(sql, values)
     result = Stock.new(stock.first)
     return result
   end

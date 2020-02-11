@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require('pry')
 require_relative('../models/category.rb')
 also_reload( '../models/*' )
 
@@ -10,11 +11,16 @@ get '/categories' do
 end
 
 # CREATE - NEW (GET) #
-get '/categoies/new' do
+get '/categories/new' do
   erb( :"category/new")
 end
 
 # CREATE - CREATE (POST) #
+post '/categories' do
+  @category = Category.new(params)
+  @category.save()
+  redirect to '/categories'
+end
 
 # READ - one/show (by id) (GET) #
 
@@ -25,7 +31,7 @@ get '/categories/:id/edit' do
 end
 
 post '/categories/:id' do
-  @category = Category.new(parms)
+  @category = Category.new(params)
   @category.update()
   redirect to '/categories'
 end

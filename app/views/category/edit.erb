@@ -1,7 +1,10 @@
 <section class="mainbox">
   <form class="" action="/categories/<%= @category.id %>" method="post">
-    <input id="name" type="text" name="name" value="<%= @category.id %>">
-    <input type="submit" value="Update Category">
+    <input id="name" type="text" name="name" value="<%= @category.name %>">
+    <input type="submit" value="Update">
   </form>
-  <p><a href="/categoies/<%= @category.id %>/delete">DELETE</a></p>
+  <form action="/categories/<%= @category.id %>/delete" method="post">
+    <input type="submit" value="Delete" id="">
+  </form>
+
 </section>
