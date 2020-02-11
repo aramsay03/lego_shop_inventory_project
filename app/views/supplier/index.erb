@@ -1,3 +1,24 @@
 <section class="mainbox">
 
+  <p></p>
+
+  <div class="">
+    <p><a href="/suppliers/new">Add new supplier</a></p>
+    <% @suppliers.each do |supplier| %>
+    <p>Company Name: <%= supplier.company_name %></p>
+    <p>Address: <%= supplier.address %></p>
+    <p>Telephone: <%= supplier.telephone %></p>
+    <p>Email: <%= supplier.email %></p>
+    <p>Website: <%= supplier.web_address %></p>
+    <p>Sales Contact: <%= supplier.sales_contact %></p>
+    <p>notes: <%= supplier.notes %></p>
+
+
+    <br>
+    <p><a href="/suppliers/<%= supplier.id %>/edit">Edit/Delete</a></p>
+
+  </div>
+  <hr />
+  <% end %>
+
 </section>

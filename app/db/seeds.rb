@@ -16,6 +16,7 @@ supplier1 = Supplier.new({
   "address" => "Lego, somewhere in Denmark",
   "telephone" => "+32 0004 44732",
   "email" => "sales@lego.dk",
+  "web_address" => "www.lego.gk",
   "sales_contact" => "Mr Lego Salesman",
   "notes" => "Minimun order value £1500.00"
 })
@@ -26,6 +27,7 @@ supplier2 = Supplier.new({
   "address" => "Edgware Rd, London",
   "telephone" => "02600 564 0573",
   "email" => "sales@bricklinks.co.uk",
+  "web_address" => "www.bricklinks.co.uk",
   "sales_contact" => "Luke Skywalker",
   "notes" => "Warning slow to deliver."
 })
@@ -36,6 +38,7 @@ supplier3 = Supplier.new({
   "address" => "Manchester",
   "telephone" => "076854 30355",
   "email" => "sales@legoclearance.com",
+  "web_address" => "www.legoclearance.com",
   "sales_contact" => "Mr Clearance",
   "notes" => "Salesman is a nightmare to deal with."
 })
