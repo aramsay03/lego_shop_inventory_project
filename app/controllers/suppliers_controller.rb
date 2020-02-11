@@ -10,6 +10,15 @@ get '/suppliers' do
 end
 
 # CREATE - NEW (GET) #
+get '/suppliers/new' do
+  erb( :"supplier/new")
+end
+
+post '/suppliers' do
+  @supplier = Supplier.new(params)
+  @supplier.save()
+  redirect to "/suppliers"
+end
 
 # CREATE - CREATE (POST) #
 
