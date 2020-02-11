@@ -5,12 +5,9 @@
 
 <div class="">
   <p><a href="/categories/new">Add new category</a></p>
+  <h2>Categories</h2>
+  <% @categories.each do |category| %>
   <table>
-    <tr>
-      <th>Category Name</th>
-      <th></th>
-    </tr>
-<% @categories.each do |category| %>
     <tr>
       <td><p><%= category.name %></p></td>
       <td><a href="/categories/<%= category.id %>/edit">Edit/Delete</a></td>

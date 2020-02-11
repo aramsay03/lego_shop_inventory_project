@@ -49,11 +49,15 @@ class Stock
   end
 
   # STOCK QTY STATUS
-  def self.stock_qty_status()
+  def stock_qty_status()
     if @stock_qty <= 5 && @stock_qty > 0
       return "Stock Low"
-    if @stock_qty == 0
+    elsif @stock_qty == 0
       return "Out of Stock"
+    elsif @stock_qty < 0
+      return "Orders to fifill"
+    else
+      return "Stock Quantity Good"
     end
   end
 

@@ -8,6 +8,7 @@
   <p>Cost Price: £<%= @product.cost_price %>.00</p>
   <p>Retail Price: £<%= @product.stock.retail_price %>.00</p>
   <p>Quantity in stock: <%= @product.stock.stock_qty %></p>
+  <p id="stock_status">Stock Status: <%= @product.stock.stock_qty_status() %></p>
   <p>Category: <%= @product.category.name %></p>
   <p>Description: <%= @product.description %></p>
   <p>Supplier: <%= @product.supplier.company_name %></p>
