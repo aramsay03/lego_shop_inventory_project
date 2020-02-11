@@ -1,0 +1,30 @@
+<section class="mainbox">
+
+  <form class="" action="/suppliers/<%= @supplier.id %>" method="post">
+
+    <label for="name">Company Name:</label>
+      <input id="name" type="text" name="company_name" value="<%= @supplier.company_name %>">
+
+    <label for="address">Address:</label>
+      <input id="address" type="text" name="address" value="<%= @supplier.address %>">
+
+    <label for="telephone">Telephone:</label>
+      <input id="telephone" type="text" name="telephone" value="<%= @supplier.telephone %>">
+
+    <label for="email">Email:</label>
+      <input id="email" type="text" name="email" value="<%= @supplier.email %>">
+
+    <label for="web-address">Web Site:</label>
+      <input id="web-address" type="text" name="web_address" value="<%= @supplier.web_address %>">
+
+    <label for="sales-contact">Sales contact:</label>
+      <input id="sales-contact" type="text" name="sales_contact" value="<%= @supplier.sales_contact %>">
+
+    <label for="notes">Notes:</label>
+      <input id="notes" type="textarea" name="notes" value="<%= @supplier.notes %>">
+
+    <input type="submit" value="Save">
+
+  </form>
+
+</section>
