@@ -24,5 +24,19 @@ get '/products/:id' do
 end
 
 # UPDATE - (find by id (GET)) & (update (POST)) #
+get '/products/:id/edit' do
+  @product = Product.find(params[:id])
+  erb( :"product/edit")
+end
+
+post '/products/:id' do
+  @product = Product.new(params)
+  @product.update()
+end
 
 # DELETE #
+post '/categories/:id/delete' do
+  @product = Category.find(params[:id])
+  @product.delete()
+  redirect to '/products'
+end
