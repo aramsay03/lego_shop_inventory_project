@@ -48,6 +48,15 @@ class Stock
     return Product.new(results.first)
   end
 
+  # STOCK QTY STATUS
+  def self.stock_qty_status()
+    if @stock_qty <= 5 && @stock_qty > 0
+      return "Stock Low"
+    if @stock_qty == 0
+      return "Out of Stock"
+    end
+  end
+
   # FIND
   def self.find(id)
     sql = "SELECT * FROM stock WHERE id = $1"
