@@ -37,7 +37,7 @@ CREATE TABLE products
 CREATE TABLE stock
 (
   id SERIAL primary key,
-  product_id INT references products(id),
+  product_id INT references products(id) ON DELETE CASCADE,
   retail_price INT,
   stock_qty INT
 );

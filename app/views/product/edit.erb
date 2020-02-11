@@ -1,3 +1,53 @@
 <section class="mainbox">
+  <div class="">
 
+  <form class="" action="/products/<%= @product.id %>" method="post">
+
+    <label for="name">Product Name:</label>
+      <input id="name" type="text" name="name" value="<%= @product.name %>">
+
+    <label for="product-code">Product Code:</label>
+      <input id="product-code" type="text" name="product_code" value="<%= @product.product_code %>">
+
+    <label for="cost-price">Cost Price:</label>
+      <input id="cost-price" type="number" name="cost_price" value="<%= @product.cost_price %>">
+
+    <label for="retail-price">Retail Price:</label>
+      <input id="retail-price" type="number" name="retail_price" value="<%= @product.stock.retail_price %>">
+
+    <label for="stock-qty">Stock Quantity:</label>
+      <input id="stock-qty" type="number" name="stock_qty" value="<%= @product.stock.stock_qty %>">
+
+    <label for="categories">Category:</label>
+      <select name="category_id" id="categories">
+        <% @categories.each do |category| %>
+        <option value="<%= @product.category.id %>" <%= "selected" if @product.category.id == category.id %> ><%= category.name %>
+        </option>
+        <% end %>
+      </select>
+
+    <label for="description">Description:</label>
+      <input type="textarea" name="description" value="<%= @product.description %>">
+
+    <label for="suppliers">Supplier:</label>
+      <select name="supplier_id" id="suppliers">
+        <% @suppliers.each do |supplier| %>
+        <option value="<%= supplier.id %>" <%= "selected" if @product.supplier.id == supplier.id %> ><%= supplier.company_name %>
+        </option>
+        <% end %>
+      </select>
+
+    <input type="submit" value="Save">
+
+  </form>
+
+  </div>
+
+  <div class="">
+
+  <form action="/products/<%= @product.id %>/delete" method="post">
+    <input type="submit" value="Delete" id="">
+  </form>
+
+  </div>
 </section>

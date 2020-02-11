@@ -1,5 +1,8 @@
 <section class="mainbox">
   <div class="">
+    <p><a href="/products/new">Add new product</a></p>
+  </div>
+  <div class="">
     <p></p>
     <% @products.each do |product| %>
     <div class="">
@@ -15,7 +18,7 @@
           <a href="/products/<%= product.id %>">More details</a>
         </li>
         <li>
-          <a href="/products/<%= product.id %>/update">Edit/Delete</a>
+          <a href="/products/<%= product.id %>/edit">Edit/Delete</a>
         </li>
       </ul>
     </div>

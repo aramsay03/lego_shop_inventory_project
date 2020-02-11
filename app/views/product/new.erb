@@ -1,0 +1,43 @@
+<section class="mainbox">
+
+  <form class="" action="/products" method="post">
+
+    <label for="name">Product Name:</label>
+      <input id="name" type="text" name="name" value="">
+
+    <label for="product-code">Product Code:</label>
+      <input id="product-code" type="text" name="product_code" value="">
+
+    <label for="cost-price">Cost Price:</label>
+      <input id="cost-price" type="number" name="cost_price" value="">
+
+    <label for="retail-price">Retail Price:</label>
+      <input id="retail-price" type="number" name="retail_price" value="">
+
+    <label for="stock-qty">Stock Quantity:</label>
+      <input id="stock-qty" type="number" name="stock_qty" value="">
+
+    <label for="categories">Category:</label>
+      <select name="category_id" id="categories">
+        <% @categories.each do |category| %>
+        <option value="<%= category.id %>"><%= category.name %>
+        </option>
+        <% end %>
+      </select>
+
+    <label for="description">Description:</label>
+      <input type="textarea" name="description" value="">
+
+    <label for="suppliers">Supplier:</label>
+      <select name="supplier_id" id="suppliers">
+        <% @suppliers.each do |supplier| %>
+        <option value="<%= supplier.id %>"><%= supplier.company_name %>
+        </option>
+        <% end %>
+      </select>
+
+    <input type="submit" value="Save">
+
+  </form>
+
+</section>

@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Product
 
-  attr_reader :id, :name, :product_code, :description, :cost_price
+  attr_reader :id, :name, :product_code, :description, :cost_price, :category_id, :supplier_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -17,22 +17,22 @@ class Product
 
   def save()
     sql = "INSERT INTO products
-    (name, product_code, description, cost_price)
+    (name, product_code, description, cost_price, category_id, supplier_id)
     VALUES
-    ($1, $2, $3, $4)
+    ($1, $2, $3, $4, $5, $6)
     RETURNING id"
-    values = [@name, @product_code, @description, @cost_price]
+    values = [@name, @product_code, @description, @cost_price, @category_id, @supplier_id]
     product = SqlRunner.run(sql, values).first
     @id = product['id'].to_i
   end
 
   def update()
     sql = "UPDATE products SET
-    (name, product_code, description, cost_price)
+    (name, product_code, description, cost_price, category_id, supplier_id)
     =
-    ($1, $2, $3, $4)
-    WHERE id = $5"
-    values = [@name, @product_code, @description, @cost_price, @id]
+    ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7"
+    values = [@name, @product_code, @description, @cost_price, @category_id, @supplier_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -51,14 +51,14 @@ class Product
 
   def supplier()
     sql = "SELECT * FROM suppliers WHERE id = $1"
-    values = [@id]
+    values = [@supplier_id]
     results = SqlRunner.run(sql, values)
     return Supplier.new(results.first)
   end
 
   def category()
     sql = "SELECT * FROM categories WHERE id = $1"
-    values = [@id]
+    values = [@category_id]
     results = SqlRunner.run(sql, values)
     return Category.new(results.first)
   end
