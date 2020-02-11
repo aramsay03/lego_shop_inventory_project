@@ -30,7 +30,7 @@ CREATE TABLE products
   description TEXT,
   cost_price INT,
   supplier_id INT references suppliers(id) ON DELETE CASCADE,
-  category_id INT references categories(id)ON DELETE CASCADE
+  category_id INT references categories(id) ON DELETE CASCADE
   -- image_url TEXT  (NO LONGER NEEDED.)
 );
 

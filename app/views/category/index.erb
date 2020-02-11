@@ -2,9 +2,19 @@
 
 <p></p>
 
-<% @categories.each do |category| %>
+
 <div class="">
-  <p>Category Name: <%= category.name %></p>
+  <table>
+    <tr>
+      <th>Category Name</th>
+      <th></th>
+    </tr>
+<% @categories.each do |category| %>
+    <tr>
+      <td><p><%= category.name %></p></td>
+      <td><a href="/categories/<%= category.id %>/edit">Edit/Delete</a></td>
+    </tr>
+  </table>
 </div>
 <hr />
 <% end %>
