@@ -1,10 +1,16 @@
 <section class="mainbox">
   <form class="" action="/categories/<%= @category.id %>" method="post">
-    <input id="name" type="text" name="name" value="<%= @category.name %>">
+    <table>
+      <tr>
+        <td>
+          <p class="label">Update category name:</p>
+        </td>
+        <td>
+          <input id="name" type="text" name="name" value="<%= @category.name %>">
+        </td>
+      </tr>
+    </table>
     <input type="submit" value="Update">
-  </form>
-  <form action="/categories/<%= @category.id %>/delete" method="post">
-    <input type="submit" value="Delete" id="">
   </form>
 
 </section>
