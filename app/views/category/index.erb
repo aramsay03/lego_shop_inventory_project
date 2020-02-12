@@ -3,15 +3,19 @@
 <p></p>
 
 
-<div class="">
+<div class="detail">
   <p><a href="/categories/new">Add new category</a></p>
   <h2>Categories</h2>
   <table>
   <% @categories.each do |category| %>
 
     <tr>
-      <td><p class="label"><%= category.name %></p></td>
-      <td><a href="/categories/<%= category.id %>/edit">Edit</a></td>
+      <td>
+        <p class="label"><%= category.name %></p>
+      </td>
+      <td>
+        <a href="/categories/<%= category.id %>/edit">Edit</a>
+      </td>
     </tr>
     <% end %>
   </table>

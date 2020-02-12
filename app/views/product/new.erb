@@ -1,43 +1,85 @@
 <section class="mainbox">
+  <div class="form">
 
   <form class="" action="/products" method="post">
-    
-    <label for="name">Product Name:</label>
-      <input id="name" type="text" name="name" value="">
-
-    <label for="product-code">Product Code:</label>
-      <input id="product-code" type="text" name="product_code" value="">
-
-    <label for="cost-price">Cost Price:</label>
-      <input id="cost-price" type="number" name="cost_price" value="">
-
-    <label for="retail-price">Retail Price:</label>
-      <input id="retail-price" type="number" name="retail_price" value="">
-
-    <label for="stock-qty">Stock Quantity:</label>
-      <input id="stock-qty" type="number" name="stock_qty" value="">
-
-    <label for="categories">Category:</label>
-      <select name="category_id" id="categories">
-        <% @categories.each do |category| %>
-        <option value="<%= category.id %>"><%= category.name %>
-        </option>
-        <% end %>
-      </select>
-
-    <label for="description">Description:</label>
-      <input id="description" type="textarea" name="description" value="">
-
-    <label for="suppliers">Supplier:</label>
-      <select name="supplier_id" id="suppliers">
-        <% @suppliers.each do |supplier| %>
-        <option value="<%= supplier.id %>"><%= supplier.company_name %>
-        </option>
-        <% end %>
-      </select>
-
+    <table>
+      <tr>
+        <td>
+          <label for="name">Product Name:</label>
+        </td>
+        <td>
+          <input id="name" type="text" name="name" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="product-code">Product Code:</label>
+        </td>
+        <td>
+          <input id="product-code" type="text" name="product_code" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="cost-price">Cost Price:</label>
+        </td>
+        <td>
+          <input id="cost-price" type="number" name="cost_price" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="retail-price">Retail Price:</label>
+        </td>
+        <td>
+          <input id="retail-price" type="number" name="retail_price" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="stock-qty">Stock Quantity:</label>
+        </td>
+        <td>
+          <input id="stock-qty" type="number" name="stock_qty" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="categories">Category:</label>
+        </td>
+        <td>
+          <select name="category_id" id="categories">
+            <% @categories.each do |category| %>
+              <option value="<%= category.id %>"><%= category.name %>
+              </option>
+            <% end %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="description">Description:</label>
+        </td>
+        <td>
+          <input id="description" type="textarea" name="description" value="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="suppliers">Supplier:</label>
+        </td>
+        <td>
+          <select name="supplier_id" id="suppliers">
+            <% @suppliers.each do |supplier| %>
+              <option value="<%= supplier.id %>"><%= supplier.company_name %>
+              </option>
+            <% end %>
+          </select>
+        </td>
+      </tr>
+    </table>
     <input type="submit" value="Save">
 
   </form>
-
+  </div>
 </section>

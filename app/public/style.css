@@ -1,3 +1,11 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p h1 h2 h3 {
+  font: sansserif;
+}
+
 body {
   width: 100%;
   margin: 0;
@@ -13,8 +21,8 @@ body {
 }
 
 div img {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 230px;
+  max-height: 230px;
 }
 
 #productimg {
@@ -22,8 +30,36 @@ div img {
   max-height: 400px;
 }
 
-.home p h1 {
+.home {
   font-weight: bold;
+  display: grid;
+  justify-content: center;
+  padding: 50px 10px;
+}
+
+.home-center {
+  width: 800px;
+  height: 400px;
+  background-image: url(./images/home_page_bg.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  display: grid;
+  justify-content: center;
+}
+
+.home-center p {
+  color: white;
+  font-weight: 600;
+  /* align-self: center; */
+}
+
+.home-center h1 {
+  display: flex;
+  color: white;
+  font-weight: 600;
+  /* align-self: center; */
+  justify-content: center;
 }
 
 main {
@@ -102,6 +138,16 @@ section .mainbox {
 
 .label {
   font-weight: bold;
+}
+
+.form {
+  display: grid;
+  justify-content: center;
+}
+
+.detail {
+  display: grid;
+  justify-content: center;
 }
 
 #stock-low {
