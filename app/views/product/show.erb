@@ -2,27 +2,72 @@
 
 <p></p>
 
-<div class="">
-  <p>Item Name: <%= @product.name %></p>
-  <p>Item number: <%= @product.product_code %></p>
-  <p>Cost Price: £<%= @product.cost_price %>.00</p>
-  <p>Retail Price: £<%= @product.stock.retail_price %>.00</p>
-  <p>Quantity in stock: <%= @product.stock.stock_qty %></p>
-  <p id="stock_status">Stock Status: <%= @product.stock.stock_qty_status() %></p>
-  <p>Category: <%= @product.category.name %></p>
-  <p>Description: <%= @product.description %></p>
-  <p>Supplier: <%= @product.supplier.company_name %></p>
+<div class="productshell">
+
+  <div class="product-show">
+
+    <div class="">
+      <table>
+
+      <tr>
+        <td>
+        <p class="label">Item Name:</p></td><td><p><%= @product.name %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p class="label">Item number:</p></td><td><p> <%= @product.product_code %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p class="label">Cost Price:</p></td><td><p> £<%= @product.cost_price %>.00</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p class="label">Retail Price:</p></td><td><p> £<%= @product.stock.retail_price %>.00</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+        <p class="label">Quantity in stock:</p></td><td><p id="<%= @product.stock.stock_qty_status_css %>"> <%= @product.stock.stock_qty %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p class="label">Stock Status:</p></td><td><p id="<%= @product.stock.stock_qty_status_css %>"> <%= @product.stock.stock_qty_status() %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p class="label">Category:</p></td><td><p> <%= @product.category.name %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p class="label">Supplier:</p></td><td><p> <%= @product.supplier.company_name %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p class="label">Description:</p></td><td><p> <%= @product.description %></p>
+        </td>
+      </tr>
+    </table>
+    <br>
+      <ul>
+        <li>
+          <a href="/products/<%= @product.id %>/edit">Edit/Delete</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <img id="productimg" src="../images/products/<%= @product.product_code %>.jpg" alt="<%= @product.name %>">
+    </div>
+  </div>
+
 </div>
-<div class="">
-  <ul>
-    <li>
-      <a href="/products/<%= @product.id %>/edit">Edit/Delete</a>
-    </li>
-  </ul>
-</div>
-<div class="productimg">
-  <img src="../images/products/<%= @product.product_code %>.jpg" alt="<%= @product.name %>">
-</div>
-<hr />
 
 </section>

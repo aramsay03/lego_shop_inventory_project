@@ -20,11 +20,11 @@ end
 
 # CREATE - CREATE (POST) #
 post "/products" do
-  @product = Product.new(params)
-  @product.save()
-  params["product_id"] = @product.id
-  @stock = Stock.new(params)
-  @stock.save()
+  product = Product.new(params)
+  product.save()
+  params["product_id"] = product.id
+  stock = Stock.new(params)
+  stock.save()
   redirect to "/products"
 end
 
@@ -43,8 +43,11 @@ get '/products/:id/edit' do
 end
 
 post '/products/:id' do
-  @product = Product.new(params)
-  @product.update()
+  product = Product.new(params)
+  product.update()
+  params["product_id"] = product.id
+  stock = Stock.new(params)
+  stock.update()
   redirect to "/products"
 end
 

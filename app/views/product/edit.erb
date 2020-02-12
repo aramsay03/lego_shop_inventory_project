@@ -21,7 +21,7 @@
     <label for="categories">Category:</label>
       <select name="category_id" id="categories">
         <% @categories.each do |category| %>
-        <option value="<%= @product.category.id %>" <%= "selected" if @product.category.id == category.id %> ><%= category.name %>
+        <option value="<%= category.id %>" <%= "selected" if @product.category.id == category.id %> ><%= category.name %>
         </option>
         <% end %>
       </select>

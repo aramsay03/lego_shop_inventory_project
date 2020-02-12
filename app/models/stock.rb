@@ -60,6 +60,18 @@ class Stock
       return "Stock Quantity Good"
     end
   end
+  
+  def stock_qty_status_css()
+    if @stock_qty <= 5 && @stock_qty > 0
+      return "stock-low"
+    elsif @stock_qty == 0
+      return "out-of-stock"
+    elsif @stock_qty < 0
+      return "orders-to-fulfill"
+    else
+      return "stock-quantity-good"
+    end
+  end
 
   # FIND
   def self.find(id)

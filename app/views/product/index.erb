@@ -2,18 +2,38 @@
   <div class="">
     <p><a href="/products/new">Add new product</a></p>
   </div>
-  <div class="">
-    <p></p>
+  <hr />
+  <div class="productshell">
+
     <% @products.each do |product| %>
-    <div class="">
-      <p>Item Name: <%= product.name %></p>
-      <p>Item number: <%= product.product_code %></p>
-      <p>Retail Price: £<%= product.stock.retail_price %>.00</p>
-      <p>Quantity in stock: <%= product.stock.stock_qty %></p>
-      <p id="stock_status">Stock Status: <%= product.stock.stock_qty_status() %></p>
-      <p>Category: <%= product.category.name %></p>
-    </div>
-    <div class="">
+    <div class="product">
+
+
+    <div class="productdetails">
+      <table>
+        <tr>
+          <td><p class="label">Item Name:</p></td><td><p><%= product.name %></p></td>
+        </tr>
+        <tr>
+          <td><p class="label">Item number:</p></td><td><p><%= product.product_code %></p></td>
+        </tr>
+        <tr>
+          <td><p class="label">Retail Price:</p></td><td><p>£<%= product.stock.retail_price %>.00</p></td>
+        </tr>
+        <tr>
+          <td><p class="label">Quantity in stock:</p></td><td><p id="<%= product.stock.stock_qty_status_css %>"><%= product.stock.stock_qty %></p></td>
+        </tr>
+        <tr>
+          <td><p class="label">Stock Status:</p></td><td><p id="<%= product.stock.stock_qty_status_css %>"><%= product.stock.stock_qty_status() %></p></td>
+        </tr>
+        <tr>
+          <td><p class="label">Category:</p></td><td><p><%= product.category.name %></p></td>
+        </tr>
+      </table>
+      <hr />
+
+
+
       <ul>
         <li>
           <a href="/products/<%= product.id %>">More details</a>
@@ -22,11 +42,13 @@
           <a href="/products/<%= product.id %>/edit">Edit/Delete</a>
         </li>
       </ul>
+
     </div>
     <div class="productimg">
       <img src="../images/products/<%= product.product_code %>.jpg" alt="<%= product.name %>">
     </div>
-    <hr />
+    </div>
+    <!-- <hr /> -->
     <% end %>
   </div>
 </section>

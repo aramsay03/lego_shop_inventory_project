@@ -13,12 +13,17 @@ body {
 }
 
 div img {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+#productimg {
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .home p h1 {
-
+  font-weight: bold;
 }
 
 main {
@@ -71,4 +76,44 @@ section .mainbox {
   background-color: white;
   /* width: 90%; */
   height: auto;
+}
+
+.productshell {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product {
+  max-width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product-show {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+}
+
+.label {
+  font-weight: bold;
+}
+
+#stock-low {
+  color: orange;
+}
+
+#out-of-stock {
+  color: red;
+  font-weight: bold;
+}
+
+#orders-to-fulfill {
+  color: red;
+  font-weight: bold;
 }
