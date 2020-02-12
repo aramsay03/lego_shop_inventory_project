@@ -21,8 +21,8 @@ body {
 }
 
 div img {
-  max-width: 230px;
-  max-height: 230px;
+  max-width: 220px;
+  max-height: 220px;
 }
 
 #productimg {
@@ -40,7 +40,7 @@ div img {
 .home-center {
   width: 800px;
   height: 400px;
-  background-image: url(./images/home_page_bg.jpg);
+  background-image: url(./images/lego_red_base_logo.jpg);
   background-position: center;
   background-size: cover;
   border-radius: 20px;
@@ -90,6 +90,7 @@ li {
 
 a {
   background-color: blue;
+  text-decoration: none;
   border-radius: 5px;
   color: white;
   height: 50px;
@@ -97,9 +98,21 @@ a {
   padding: 5px;
 }
 
+a:hover {
+  background-color: red;
+  text-decoration: none;
+}
+
 nav a {
   background-color: yellow;
   color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: blue;
+  color: white;
+  text-decoration: none;
 }
 
 section .mainbox {
